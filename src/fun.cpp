@@ -2,10 +2,10 @@
 #include "fun.h"
 
 unsigned int faStr1(const char* str) {
-	int i = 0;
-	int count = 0;
-	int in = 0;
-	int F = 0;
+    int i = 0;
+    int count = 0;
+    int in = 0;
+    int F = 0;
 	while (str[i] != '\0') {
 		if (in == 0 && str[i] != ' ') {
 			if (str[i] > 57 || str[i] < 48) F = 1;
