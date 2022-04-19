@@ -1,11 +1,11 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
 
-unsigned int faStr1(const char *str) {
-    int i = 0,
-		count = 0,
-		in = 0,//0-вне слова
-		F = 0; //0-обнаружилась цифра
+unsigned int faStr1(const char* str) {
+	int i = 0;
+	int count = 0;
+	int in = 0;
+	int F = 0;
 	while (str[i] != '\0')
 	{
 		if (in == 0 && str[i] != ' ')
@@ -17,7 +17,7 @@ unsigned int faStr1(const char *str) {
 		{
 			if (str[i] >= 48 && str[i] <= 57) F = 0;
 		}
-		else if (in == 1 && str[i] == ' ') 
+		else if (in == 1 && str[i] == ' ')
 		{
 			if (F == 1) count++;
 			F = 0;
@@ -30,10 +30,11 @@ unsigned int faStr1(const char *str) {
 	return count;
 }
 
-unsigned int faStr2(const char *str){
-    int i = 0, count = 0,
-		in = 0,
-		F = 0;
+unsigned int faStr2(const char* str) {
+	int i = 0;
+	int count = 0;
+	int in = 0;
+	int F = 0;
 	while (str[i] != '\0')
 	{
 		if (in == 0 && str[i] >= 65 && str[i] <= 90)
@@ -59,12 +60,13 @@ unsigned int faStr2(const char *str){
 	return count;
 }
 
-unsigned int faStr3(const char *str)
+unsigned int faStr3(const char* str)
 {
-    int i = 0, count = 0,
-		in = 0,
-		leng = 0,
-		answer;
+	int i = 0;
+	int count = 0;
+	int in = 0;
+	int leng = 0;
+	int answer;
 	float sum = 0;
 	while (str[i] != '\0')
 	{
