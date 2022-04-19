@@ -30,8 +30,33 @@ unsigned int faStr1(const char *str) {
 	return count;
 }
 
-unsigned int faStr2(const char *str) {
-    return 0;
+unsigned int faStr2(const char *str){
+    int i = 0, count = 0,
+		in = 0,
+		F = 0;
+	while (str[i] != '\0')
+	{
+		if (in == 0 && str[i] >= 65 && str[i] <= 90)
+		{
+			in = 1;
+			F = 1;
+		}
+		else if (in == 1 && str[i] != ' ' && F == 1)
+		{
+			if (str[i] >= 65 && str[i] <= 90) F = 0;
+			if (str[i] > 122 || str[i] < 65) F = 0;
+		}
+		else if (in == 1 && str[i] == ' ')
+		{
+			if (F == 1) count++;
+			F = 0;
+			in = 0;
+		}
+
+		i++;
+	}
+	if (in == 1 && F == 1) count++;
+	return count;
 }
 
 unsigned int faStr3(const char *str) {
