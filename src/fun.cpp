@@ -59,6 +59,33 @@ unsigned int faStr2(const char *str){
 	return count;
 }
 
-unsigned int faStr3(const char *str) {
-    return 0;
+unsigned int faStr3(const char *str)
+{
+    int i = 0, count = 0,
+		in = 0,
+		leng = 0,
+		answer;
+	float sum = 0;
+	while (str[i] != '\0')
+	{
+		if (in == 0 && str[i] != ' ')
+		{
+			count++;
+			in = 1;
+			leng++;
+		}
+		else if (in == 1 && str[i] != ' ') leng++;
+		else if (in == 1 && str[i] == ' ')
+		{
+			sum = sum + leng;
+			in = 0;
+			leng = 0;
+		}
+		i++;
+	}
+	if (in == 1) sum = sum + leng;
+	sum = sum / (float)count;
+	answer = sum;
+	if (sum - (float)answer >= 0.5) answer++;
+	return answer;
 }
