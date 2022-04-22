@@ -10,11 +10,9 @@ unsigned int faStr1(const char* str) {
         if (in == 0 && str[i] != ' ') {
             if (str[i] > 57 || str[i] < 48) F = 1;
             in = 1;
-        }
-        else if (in == 1 && str[i] != ' ' && F == 1) {
+        } else if (in == 1 && str[i] != ' ' && F == 1) {
             if (str[i] >= 48 && str[i] <= 57) F = 0;
-        }
-        else if (in == 1 && str[i] == ' ') {
+        } else if (in == 1 && str[i] == ' ') {
             if (F == 1) count++;
             F = 0;
             in = 0;
@@ -60,8 +58,7 @@ unsigned int faStr3(const char* str) {
             count++;
             in = 1;
             leng++;
-        }
-        else if (in == 1 && str[i] != ' ') leng++;
+        } else if (in == 1 && str[i] != ' ') leng++;
         else if (in == 1 && str[i] == ' ') {
             sum = sum + leng;
             in = 0;
