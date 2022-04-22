@@ -15,9 +15,9 @@ unsigned int faStr1(const char* str) {
                     if (str[i] >= 48 && str[i] <= 57) F = 0;
                 }
                 else if (in == 1 && str[i] == ' ') {
-                        if (F == 1) count++;
-                        F = 0;
-                        in = 0;
+                    if (F == 1) count++;
+                    F = 0;
+                    in = 0;
                 }
                 i++;
     }
@@ -37,17 +37,17 @@ unsigned int faStr2(const char* str) {
         }
         else if (in == 1 && str[i] != ' ' && F == 1) {
             if (str[i] >= 65 && str[i] <= 90) F = 0;
-	    if (str[i] > 122 || str[i] < 65) F = 0;
+            if (str[i] > 122 || str[i] < 65) F = 0;
         }
-	else if (in == 1 && str[i] == ' ') {
+        else if (in == 1 && str[i] == ' ') {
             if (F == 1) count++;
             F = 0;
             in = 0;
-	}
+        }
         i++;
     }
-	if (in == 1 && F == 1) count++;
-	return count;
+        if (in == 1 && F == 1) count++;
+        return count;
 }
 
 unsigned int faStr3(const char* str) {
