@@ -58,8 +58,9 @@ unsigned int faStr3(const char* str) {
             count++;
             in = 1;
             leng++;
-        } else if (in == 1 && str[i] != ' ') leng++;
-        else if (in == 1 && str[i] == ' ') {
+        } else if (in == 1 && str[i] != ' ') {
+            leng++;
+        } else if (in == 1 && str[i] == ' ') {
             sum = sum + leng;
             in = 0;
             leng = 0;
